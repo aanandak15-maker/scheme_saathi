@@ -1,0 +1,563 @@
+[
+  {
+    "scheme_id": "SCH001",
+    "scheme_name": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "scheme_name_hindi": "प्रधानमंत्री किसान सम्मान निधि",
+    "category": "Agriculture",
+    "subcategory": "Farmer Income Support",
+    "ministry": "Ministry of Agriculture & Farmers Welfare",
+    "launched_year": 2019,
+    "benefit_amount": "₹6,000 per year (in 3 installments)",
+    "benefit_type": "Direct Cash Transfer",
+    "description": "Financial benefit to supplement financial needs of land-holding farmers",
+    "eligibility_criteria": {
+      "primary_requirements": [
+        {
+          "criterion": "citizenship",
+          "rule": "must_be_indian_citizen",
+          "value": true
+        },
+        {
+          "criterion": "land_ownership",
+          "rule": "must_own_cultivable_land",
+          "value": true,
+          "notes": "As per land records"
+        },
+        {
+          "criterion": "farmer_category",
+          "rule": "small_marginal_or_any_landholding",
+          "value": "all"
+        }
+      ],
+      "income_criteria": {
+        "type": "exclusion_based",
+        "income_tax_payer": false,
+        "pension_limit": 10000,
+        "pension_above_limit": false
+      },
+      "exclusions": [
+        "Constitutional post holders (current/former)",
+        "Current/former MPs, MLAs, MLCs",
+        "Central/State Govt employees (excluding Class IV/Group D)",
+        "Pensioners receiving >₹10,000/month (excluding Class IV/Group D)",
+        "Income tax payers in last assessment year",
+        "Professionals (Doctors, Engineers, CAs, Lawyers, Architects)",
+        "Institutional landholders"
+      ],
+      "age_criteria": {
+        "min_age": 18,
+        "max_age": null
+      }
+    },
+    "required_documents": [
+      {
+        "doc_id": "DOC001",
+        "doc_name": "Aadhaar Card",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC002",
+        "doc_name": "Land Records/Ownership Proof",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC003",
+        "doc_name": "Bank Account Passbook",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC004",
+        "doc_name": "Mobile Number (Aadhaar linked)",
+        "mandatory": true
+      }
+    ],
+    "application_process": {
+      "channels": [
+        "Online Portal",
+        "CSC Centers",
+        "State Agriculture Offices"
+      ],
+      "portal_url": "https://pmkisan.gov.in",
+      "steps": [
+        "Visit PM-KISAN portal or CSC center",
+        "Complete Aadhaar-based eKYC (mandatory)",
+        "Fill registration form with land details",
+        "Upload required documents",
+        "Submit and get registration number",
+        "Track status online"
+      ]
+    },
+    "ai_context": {
+      "target_audience": "small and marginal farmers, landholding families",
+      "pain_points": [
+        "low farm income",
+        "seasonal income gaps",
+        "input cost burden"
+      ],
+      "typical_profile": "rural farmer with 1-5 acres land, agriculture as primary income"
+    },
+    "status": "Active",
+    "last_updated": "2026-02-15"
+  },
+  {
+    "scheme_id": "SCH002",
+    "scheme_name": "PMFBY (Pradhan Mantri Fasal Bima Yojana)",
+    "scheme_name_hindi": "प्रधानमंत्री फसल बीमा योजना",
+    "category": "Agriculture",
+    "subcategory": "Crop Insurance",
+    "ministry": "Ministry of Agriculture & Farmers Welfare",
+    "launched_year": 2016,
+    "benefit_amount": "Crop insurance coverage up to sum insured",
+    "benefit_type": "Insurance",
+    "description": "Provides insurance coverage and financial support to farmers in case of crop failure",
+    "eligibility_criteria": {
+      "primary_requirements": [
+        {
+          "criterion": "farmer_type",
+          "rule": "sharecroppers_tenant_farmers_owner_farmers",
+          "value": "all"
+        },
+        {
+          "criterion": "crop_coverage",
+          "rule": "notified_crops_in_notified_areas",
+          "value": true
+        },
+        {
+          "criterion": "loanee_status",
+          "rule": "mandatory_for_loanee_optional_for_non_loanee",
+          "value": "mixed"
+        }
+      ],
+      "land_criteria": {
+        "own_land": true,
+        "leased_land": true,
+        "minimum_area": null
+      },
+      "exclusions": []
+    },
+    "required_documents": [
+      {
+        "doc_id": "DOC001",
+        "doc_name": "Aadhaar Card",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC005",
+        "doc_name": "Land Records/Lease Agreement",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC003",
+        "doc_name": "Bank Account Details",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC006",
+        "doc_name": "Sowing Certificate",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC007",
+        "doc_name": "Crop Details",
+        "mandatory": true
+      }
+    ],
+    "application_process": {
+      "channels": [
+        "Banks",
+        "CSC Centers",
+        "Agriculture Office",
+        "Online Portal"
+      ],
+      "portal_url": "https://pmfby.gov.in",
+      "steps": [
+        "Enroll within cut-off date (before sowing)",
+        "Pay nominal premium (2% for Kharif, 1.5% for Rabi)",
+        "Submit land and crop details",
+        "Get insurance certificate",
+        "Report crop loss within 72 hours if damage occurs"
+      ]
+    },
+    "ai_context": {
+      "target_audience": "farmers growing notified crops, both loanee and non-loanee",
+      "pain_points": [
+        "weather uncertainties",
+        "crop failure risk",
+        "financial losses from natural calamities"
+      ],
+      "typical_profile": "farmer cultivating seasonal crops in notified areas"
+    },
+    "status": "Active",
+    "last_updated": "2026-02-15"
+  },
+  {
+    "scheme_id": "SCH003",
+    "scheme_name": "PMAY-G (Pradhan Mantri Awas Yojana - Gramin)",
+    "scheme_name_hindi": "प्रधानमंत्री आवास योजना - ग्रामीण",
+    "category": "Housing",
+    "subcategory": "Rural Housing",
+    "ministry": "Ministry of Rural Development",
+    "launched_year": 2016,
+    "benefit_amount": "₹1.2 lakh (plains), ₹1.3 lakh (hilly areas)",
+    "benefit_type": "Housing Assistance",
+    "description": "Financial assistance to rural poor for construction of pucca houses",
+    "eligibility_criteria": {
+      "primary_requirements": [
+        {
+          "criterion": "residence",
+          "rule": "rural_area",
+          "value": true
+        },
+        {
+          "criterion": "economic_status",
+          "rule": "below_poverty_line",
+          "value": true
+        },
+        {
+          "criterion": "housing_status",
+          "rule": "houseless_or_kutcha_house",
+          "value": true
+        }
+      ],
+      "special_categories": [
+        "Families without adult member (15-59 age)",
+        "Families with disabled member",
+        "SC/ST families",
+        "Widows and unmarried women",
+        "Manual scavenger families",
+        "Families doing casual labor"
+      ],
+      "exclusions": [
+        "Families with pucca house",
+        "Government employees",
+        "Income tax payers",
+        "Families with motorized vehicles"
+      ],
+      "age_criteria": {
+        "female_head_priority": true
+      }
+    },
+    "required_documents": [
+      {
+        "doc_id": "DOC001",
+        "doc_name": "Aadhaar Card",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC008",
+        "doc_name": "BPL Card",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC003",
+        "doc_name": "Bank Account (with IFSC)",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC009",
+        "doc_name": "SECC Data",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC010",
+        "doc_name": "Job Card (if MGNREGA worker)",
+        "mandatory": false
+      }
+    ],
+    "application_process": {
+      "channels": [
+        "Gram Panchayat",
+        "Block Office",
+        "Online Portal"
+      ],
+      "portal_url": "https://pmayg.nic.in",
+      "steps": [
+        "Beneficiary identified through SECC 2011 data",
+        "Gram Sabha verification",
+        "Sanction by district authorities",
+        "Installment-based disbursement",
+        "Construction with technical guidance"
+      ]
+    },
+    "ai_context": {
+      "target_audience": "rural poor, houseless families, BPL families",
+      "pain_points": [
+        "lack of permanent shelter",
+        "living in kutcha houses",
+        "housing insecurity"
+      ],
+      "typical_profile": "rural BPL family without pucca house, often with vulnerable members"
+    },
+    "status": "Active",
+    "last_updated": "2026-02-15"
+  },
+  {
+    "scheme_id": "SCH004",
+    "scheme_name": "PM-SYM (Pradhan Mantri Shram Yogi Maandhan)",
+    "scheme_name_hindi": "प्रधानमंत्री श्रम योगी मानधन",
+    "category": "Social Security",
+    "subcategory": "Pension",
+    "ministry": "Ministry of Labour and Employment",
+    "launched_year": 2019,
+    "benefit_amount": "₹3,000 per month pension (after 60 years)",
+    "benefit_type": "Pension",
+    "description": "Pension scheme for unorganised workers with monthly income up to ₹15,000",
+    "eligibility_criteria": {
+      "primary_requirements": [
+        {
+          "criterion": "age",
+          "rule": "between_18_and_40",
+          "value": [
+            18,
+            40
+          ]
+        },
+        {
+          "criterion": "monthly_income",
+          "rule": "below_15000",
+          "value": 15000
+        },
+        {
+          "criterion": "worker_type",
+          "rule": "unorganised_sector",
+          "value": true
+        }
+      ],
+      "occupation_types": [
+        "Street vendors",
+        "Agriculture workers",
+        "Construction workers",
+        "Leather workers",
+        "Handloom workers",
+        "Mid-day meal workers",
+        "Rickshaw/auto drivers",
+        "Rag pickers",
+        "Carpenters",
+        "Fishermen"
+      ],
+      "exclusions": [
+        "EPFO members",
+        "ESIC members",
+        "NPS (Govt funded) members",
+        "Income tax payers"
+      ],
+      "age_criteria": {
+        "min_age": 18,
+        "max_age": 40
+      }
+    },
+    "required_documents": [
+      {
+        "doc_id": "DOC001",
+        "doc_name": "Aadhaar Card",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC003",
+        "doc_name": "Bank Account (IFSC)",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC011",
+        "doc_name": "Mobile Number",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC012",
+        "doc_name": "Self-declaration of Income",
+        "mandatory": true
+      }
+    ],
+    "application_process": {
+      "channels": [
+        "CSC Centers",
+        "Online Portal"
+      ],
+      "portal_url": "https://maandhan.in",
+      "steps": [
+        "Visit CSC or portal",
+        "Fill enrollment form",
+        "Age-based contribution (₹55-₹200/month)",
+        "Equal contribution by Government",
+        "Pension starts at age 60"
+      ]
+    },
+    "ai_context": {
+      "target_audience": "young unorganised workers aged 18-40 with low income",
+      "pain_points": [
+        "no social security",
+        "old age financial insecurity",
+        "irregular income"
+      ],
+      "typical_profile": "unorganised sector worker, no EPF/ESIC coverage, income <₹15k/month"
+    },
+    "status": "Active",
+    "last_updated": "2026-02-15"
+  },
+  {
+    "scheme_id": "SCH005",
+    "scheme_name": "PM SVANidhi (Street Vendor's AtmaNirbhar Nidhi)",
+    "scheme_name_hindi": "पीएम स्वनिधि",
+    "category": "Financial Inclusion",
+    "subcategory": "Micro Credit",
+    "ministry": "Ministry of Housing and Urban Affairs",
+    "launched_year": 2020,
+    "benefit_amount": "Working capital loan up to ₹10,000 (extendable to ₹50,000)",
+    "benefit_type": "Credit",
+    "description": "Micro-credit scheme for street vendors to resume business post-COVID",
+    "eligibility_criteria": {
+      "primary_requirements": [
+        {
+          "criterion": "occupation",
+          "rule": "street_vendor",
+          "value": true
+        },
+        {
+          "criterion": "vending_certificate",
+          "rule": "certificate_or_survey_inclusion",
+          "value": "either"
+        },
+        {
+          "criterion": "business_type",
+          "rule": "urban_or_peri_urban_area",
+          "value": true
+        }
+      ],
+      "vendor_types": [
+        "Hawkers",
+        "Food vendors",
+        "Fruit/vegetable sellers",
+        "Tea stall owners",
+        "Small shop owners",
+        "Service providers (cobblers, barbers, etc.)"
+      ],
+      "exclusions": []
+    },
+    "required_documents": [
+      {
+        "doc_id": "DOC001",
+        "doc_name": "Aadhaar Card",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC013",
+        "doc_name": "Vending Certificate/LoR",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC003",
+        "doc_name": "Bank Account",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC014",
+        "doc_name": "Photograph",
+        "mandatory": true
+      }
+    ],
+    "application_process": {
+      "channels": [
+        "Online Portal",
+        "CSC Centers",
+        "ULB Offices"
+      ],
+      "portal_url": "https://pmsvanidhi.mohua.gov.in",
+      "steps": [
+        "Register on portal",
+        "Fill loan application",
+        "Submit vending documents",
+        "Loan sanctioned within 7 days",
+        "Receive ₹10,000 loan",
+        "Repay in monthly installments",
+        "Eligible for higher amounts after repayment"
+      ]
+    },
+    "ai_context": {
+      "target_audience": "urban street vendors affected by COVID-19",
+      "pain_points": [
+        "lack of working capital",
+        "no access to formal credit",
+        "business recovery challenges"
+      ],
+      "typical_profile": "street vendor in urban/peri-urban area with vending certificate"
+    },
+    "status": "Active",
+    "last_updated": "2026-02-15"
+  },
+  {
+    "scheme_id": "SCH006",
+    "scheme_name": "PMJJBY (Pradhan Mantri Jeevan Jyoti Bima Yojana)",
+    "scheme_name_hindi": "प्रधानमंत्री जीवन ज्योति बीमा योजना",
+    "category": "Insurance",
+    "subcategory": "Life Insurance",
+    "ministry": "Ministry of Finance",
+    "launched_year": 2015,
+    "benefit_amount": "₹2 lakh life cover",
+    "benefit_type": "Insurance",
+    "description": "Life insurance scheme offering coverage for death due to any reason",
+    "eligibility_criteria": {
+      "primary_requirements": [
+        {
+          "criterion": "age",
+          "rule": "between_18_and_50",
+          "value": [
+            18,
+            50
+          ]
+        },
+        {
+          "criterion": "bank_account",
+          "rule": "savings_bank_account",
+          "value": true
+        }
+      ],
+      "premium": {
+        "amount": "₹436 per year",
+        "auto_debit": true
+      },
+      "exclusions": []
+    },
+    "required_documents": [
+      {
+        "doc_id": "DOC001",
+        "doc_name": "Aadhaar Card",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC003",
+        "doc_name": "Savings Bank Account",
+        "mandatory": true
+      },
+      {
+        "doc_id": "DOC015",
+        "doc_name": "Nominee Details",
+        "mandatory": true
+      }
+    ],
+    "application_process": {
+      "channels": [
+        "Bank Branches",
+        "Online Banking"
+      ],
+      "portal_url": "Bank-specific",
+      "steps": [
+        "Visit your bank branch",
+        "Fill PMJJBY enrollment form",
+        "Provide consent for auto-debit",
+        "Annual premium deducted from account",
+        "Renewable annually"
+      ]
+    },
+    "ai_context": {
+      "target_audience": "bank account holders aged 18-50 seeking affordable life insurance",
+      "pain_points": [
+        "family financial security",
+        "low insurance penetration",
+        "affordable coverage need"
+      ],
+      "typical_profile": "middle-income individual with bank account, seeking basic life cover"
+    },
+    "status": "Active",
+    "last_updated": "2026-02-15"
+  }
+]

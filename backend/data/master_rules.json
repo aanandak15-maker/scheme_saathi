@@ -1,0 +1,294 @@
+{
+    "version": "2.0",
+    "description": "Master Eligibility Rules for 15 Schemes",
+    "rules_by_scheme": {
+        "PM_KISAN": {
+            "rule_type": "inclusion_with_exclusions",
+            "logic": "AND",
+            "inclusion_rules": [
+                {
+                    "field": "farmer_details.is_farmer",
+                    "value": true,
+                    "explanation": "Must be a farmer"
+                },
+                {
+                    "field": "farmer_details.land_ownership",
+                    "value": true,
+                    "explanation": "Must own land"
+                }
+            ],
+            "exclusion_rules": [
+                {
+                    "field": "financial.is_income_tax_payer",
+                    "value": true,
+                    "disqualifies": true,
+                    "explanation": "Tax payers excluded"
+                },
+                {
+                    "field": "exclusions.is_government_employee",
+                    "value": true,
+                    "disqualifies": true,
+                    "explanation": "Govt employees excluded"
+                }
+            ]
+        },
+        "PMFBY": {
+            "rule_type": "inclusion_based",
+            "inclusion_rules": [
+                {
+                    "field": "farmer_details.is_farmer",
+                    "value": true,
+                    "explanation": "Must be a farmer"
+                },
+                {
+                    "field": "farmer_details.crops_grown",
+                    "operator": "not_empty",
+                    "value": null,
+                    "explanation": "Must grow notified crops"
+                }
+            ]
+        },
+        "KCC": {
+            "rule_type": "inclusion_based",
+            "inclusion_rules": [
+                {
+                    "field": "farmer_details.is_farmer",
+                    "value": true,
+                    "explanation": "Must be a farmer/fisherman"
+                },
+                {
+                    "field": "age",
+                    "operator": "gte",
+                    "value": 18,
+                    "explanation": "Min age 18"
+                }
+            ]
+        },
+        "PM_KUSUM": {
+            "rule_type": "inclusion_based",
+            "inclusion_rules": [
+                {
+                    "field": "farmer_details.is_farmer",
+                    "value": true,
+                    "explanation": "Must be a farmer"
+                },
+                {
+                    "field": "farmer_details.land_ownership",
+                    "value": true,
+                    "explanation": "Must own land for pump"
+                }
+            ]
+        },
+        "UJJWALA": {
+            "rule_type": "inclusion_based",
+            "inclusion_rules": [
+                {
+                    "field": "gender",
+                    "value": "Female",
+                    "explanation": "For women only"
+                },
+                {
+                    "field": "age",
+                    "operator": "gte",
+                    "value": 18,
+                    "explanation": "Adult woman"
+                },
+                {
+                    "field": "occupation.is_bpl",
+                    "value": true,
+                    "explanation": "Must be BPL household"
+                },
+                {
+                    "field": "housing.has_lpg",
+                    "value": false,
+                    "explanation": "No existing LPG"
+                }
+            ]
+        },
+        "SUKANYA_SAMRIDDHI": {
+            "rule_type": "inclusion_based",
+            "inclusion_rules": [
+                {
+                    "field": "family.has_girl_child",
+                    "value": true,
+                    "explanation": "Must have girl child"
+                },
+                {
+                    "field": "family.girl_child_age_max",
+                    "operator": "lte",
+                    "value": 10,
+                    "explanation": "Girl child must be under 10"
+                }
+            ]
+        },
+        "MATRU_VANDANA": {
+            "rule_type": "inclusion_based",
+            "inclusion_rules": [
+                {
+                    "field": "gender",
+                    "value": "Female",
+                    "explanation": "Women only"
+                },
+                {
+                    "field": "health.is_pregnant_or_lactating",
+                    "value": true,
+                    "explanation": "Must be pregnant/lactating"
+                },
+                {
+                    "field": "family.is_first_child",
+                    "value": true,
+                    "explanation": "For first live birth"
+                }
+            ],
+            "exclusion_rules": [
+                {
+                    "field": "exclusions.is_government_employee",
+                    "value": true,
+                    "disqualifies": true
+                }
+            ]
+        },
+        "AYUSHMAN_BHARAT": {
+            "rule_type": "inclusion_based",
+            "inclusion_rules": [
+                {
+                    "field": "occupation.is_bpl",
+                    "value": true,
+                    "explanation": "Must be BPL/SECC listed"
+                }
+            ]
+        },
+        "PM_VIDYALAKSHMI": {
+            "rule_type": "inclusion_based",
+            "inclusion_rules": [
+                {
+                    "field": "education.is_student",
+                    "value": true,
+                    "explanation": "Must be a student"
+                },
+                {
+                    "field": "family.annual_income",
+                    "operator": "lte",
+                    "value": 450000,
+                    "explanation": "Income < 4.5L for subsidy"
+                }
+            ]
+        },
+        "PMAY_URBAN": {
+            "rule_type": "inclusion_based",
+            "inclusion_rules": [
+                {
+                    "field": "location.area_type",
+                    "value": "Urban",
+                    "explanation": "Must be in Urban area"
+                },
+                {
+                    "field": "housing.house_type",
+                    "operator": "neq",
+                    "value": "Pucca",
+                    "explanation": "No Pucca house"
+                },
+                {
+                    "field": "family.annual_income",
+                    "operator": "lte",
+                    "value": 600000,
+                    "explanation": "EWS/LIG Category"
+                }
+            ]
+        },
+        "MUDRA": {
+            "rule_type": "inclusion_based",
+            "inclusion_rules": [
+                {
+                    "field": "age",
+                    "operator": "gte",
+                    "value": 18,
+                    "explanation": "Adult"
+                },
+                {
+                    "field": "occupation.business_plan",
+                    "value": true,
+                    "explanation": "Has business plan"
+                }
+            ]
+        },
+        "MGNREGA": {
+            "rule_type": "inclusion_based",
+            "inclusion_rules": [
+                {
+                    "field": "location.area_type",
+                    "value": "Rural",
+                    "explanation": "Rural households only"
+                },
+                {
+                    "field": "age",
+                    "operator": "gte",
+                    "value": 18,
+                    "explanation": "Adult willing to do unskilled work"
+                }
+            ]
+        },
+        "OLD_AGE_PENSION": {
+            "rule_type": "inclusion_based",
+            "inclusion_rules": [
+                {
+                    "field": "age",
+                    "operator": "gte",
+                    "value": 60,
+                    "explanation": "Age 60+"
+                },
+                {
+                    "field": "occupation.is_bpl",
+                    "value": true,
+                    "explanation": "Must be BPL"
+                }
+            ]
+        },
+        "SKILL_INDIA": {
+            "rule_type": "inclusion_based",
+            "inclusion_rules": [
+                {
+                    "field": "age",
+                    "operator": "gte",
+                    "value": 15,
+                    "explanation": "Min age 15"
+                },
+                {
+                    "field": "occupation.is_unemployed",
+                    "value": true,
+                    "explanation": "Targeting unemployed/dropouts"
+                }
+            ]
+        },
+        "LADLI_BEHNA_MP": {
+            "rule_type": "inclusion_based",
+            "inclusion_rules": [
+                {
+                    "field": "location.state",
+                    "value": "Madhya Pradesh",
+                    "explanation": "MP Residents only"
+                },
+                {
+                    "field": "gender",
+                    "value": "Female",
+                    "explanation": "Women only"
+                },
+                {
+                    "field": "age",
+                    "operator": "between",
+                    "value": [
+                        21,
+                        60
+                    ],
+                    "explanation": "Age 21-60"
+                },
+                {
+                    "field": "family.annual_income",
+                    "operator": "lte",
+                    "value": 250000,
+                    "explanation": "Income < 2.5L"
+                }
+            ]
+        }
+    }
+}

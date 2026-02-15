@@ -1,0 +1,494 @@
+[
+  {
+    "citizen_id": "CIT001",
+    "full_name": "Ramesh Kumar",
+    "name_hindi": "रमेश कुमार",
+    "age": 42,
+    "gender": "Male",
+    "aadhaar_number": "XXXX-XXXX-1234",
+    "mobile_number": "+91-98XXXXXXXX",
+    "language_preference": [
+      "Hindi",
+      "Bhojpuri"
+    ],
+    "location": {
+      "state": "Uttar Pradesh",
+      "district": "Gautam Buddha Nagar",
+      "block": "Dankaur",
+      "village_city": "Rithora",
+      "area_type": "Rural",
+      "pincode": "201301"
+    },
+    "occupation": {
+      "primary_occupation": "Farmer",
+      "occupation_category": "Farmer",
+      "monthly_income": 8000,
+      "income_source": "Agriculture",
+      "employment_type": "Self-employed",
+      "is_bpl": false
+    },
+    "farmer_details": {
+      "is_farmer": true,
+      "land_ownership": true,
+      "land_area_acres": 1.5,
+      "land_type": "Irrigated",
+      "crops_grown": [
+        "Wheat",
+        "Rice",
+        "Vegetables"
+      ],
+      "has_kisan_credit_card": true,
+      "farmer_category": "Marginal (<1 acre)"
+    },
+    "financial": {
+      "has_bank_account": true,
+      "bank_name": "State Bank of India",
+      "account_number": "XXXX1234",
+      "ifsc_code": "SBIN0001234",
+      "is_income_tax_payer": false,
+      "annual_income": 96000
+    },
+    "social": {
+      "caste_category": "OBC",
+      "religion": "Hindu",
+      "minority_status": false
+    },
+    "family": {
+      "family_size": 5,
+      "dependents": 3,
+      "has_disabled_member": false,
+      "is_widow": false,
+      "has_adult_earning_member": true,
+      "female_head_of_family": false
+    },
+    "housing": {
+      "house_type": "Semi-pucca",
+      "owns_house": true,
+      "has_electricity": true,
+      "has_toilet": true
+    },
+    "documents": {
+      "aadhaar_card": true,
+      "pan_card": false,
+      "bank_passbook": true,
+      "land_records": true,
+      "bpl_card": false,
+      "ration_card": true,
+      "voter_id": true,
+      "driving_license": false
+    },
+    "schemes_enrolled": {
+      "current_schemes": [],
+      "past_schemes": []
+    },
+    "exclusions": {
+      "is_government_employee": false,
+      "is_pensioner": false,
+      "pension_amount": 0,
+      "owns_motorized_vehicle": false,
+      "is_professional": false,
+      "professional_type": "None",
+      "constitutional_post": false,
+      "is_mp_mla": false
+    },
+    "digital": {
+      "can_use_smartphone": false,
+      "internet_access": false,
+      "literacy_level": "Basic"
+    },
+    "ai_profile_summary": "Marginal farmer with 1.5 acres irrigated land, growing wheat and rice. Low income, rural background, basic literacy. Likely eligible for PM-KISAN, PMFBY.",
+    "eligible_schemes_predicted": [
+      "SCH001",
+      "SCH002"
+    ]
+  },
+  {
+    "citizen_id": "CIT002",
+    "full_name": "Sunita Devi",
+    "name_hindi": "सुनीता देवी",
+    "age": 38,
+    "gender": "Female",
+    "aadhaar_number": "XXXX-XXXX-5678",
+    "mobile_number": "+91-97XXXXXXXX",
+    "language_preference": [
+      "Hindi"
+    ],
+    "location": {
+      "state": "Bihar",
+      "district": "Patna",
+      "block": "Danapur",
+      "village_city": "Khajpura",
+      "area_type": "Rural",
+      "pincode": "801503"
+    },
+    "occupation": {
+      "primary_occupation": "Agricultural Labor",
+      "occupation_category": "Agricultural Labor",
+      "monthly_income": 4000,
+      "income_source": "Daily Wage",
+      "employment_type": "Daily Wage",
+      "is_bpl": true
+    },
+    "farmer_details": {
+      "is_farmer": false,
+      "land_ownership": false,
+      "land_area_acres": 0,
+      "land_type": null,
+      "crops_grown": [],
+      "has_kisan_credit_card": false,
+      "farmer_category": null
+    },
+    "financial": {
+      "has_bank_account": true,
+      "bank_name": "Pradhan Mantri Jan Dhan Account",
+      "account_number": "XXXX5678",
+      "ifsc_code": "SBIN0009876",
+      "is_income_tax_payer": false,
+      "annual_income": 48000
+    },
+    "social": {
+      "caste_category": "SC",
+      "religion": "Hindu",
+      "minority_status": false
+    },
+    "family": {
+      "family_size": 4,
+      "dependents": 2,
+      "has_disabled_member": true,
+      "is_widow": true,
+      "has_adult_earning_member": false,
+      "female_head_of_family": true
+    },
+    "housing": {
+      "house_type": "Kutcha",
+      "owns_house": false,
+      "has_electricity": false,
+      "has_toilet": false
+    },
+    "documents": {
+      "aadhaar_card": true,
+      "pan_card": false,
+      "bank_passbook": true,
+      "land_records": false,
+      "bpl_card": true,
+      "ration_card": true,
+      "voter_id": true,
+      "driving_license": false
+    },
+    "schemes_enrolled": {
+      "current_schemes": [],
+      "past_schemes": []
+    },
+    "exclusions": {
+      "is_government_employee": false,
+      "is_pensioner": false,
+      "pension_amount": 0,
+      "owns_motorized_vehicle": false,
+      "is_professional": false,
+      "professional_type": "None",
+      "constitutional_post": false,
+      "is_mp_mla": false
+    },
+    "digital": {
+      "can_use_smartphone": false,
+      "internet_access": false,
+      "literacy_level": "Illiterate"
+    },
+    "ai_profile_summary": "BPL widow with disabled family member, living in kutcha house. Agricultural labor with very low income. Multiple vulnerability factors. Priority for PMAY-G, widow pension schemes.",
+    "eligible_schemes_predicted": [
+      "SCH003"
+    ]
+  },
+  {
+    "citizen_id": "CIT003",
+    "full_name": "Rajesh Sharma",
+    "name_hindi": "राजेश शर्मा",
+    "age": 28,
+    "gender": "Male",
+    "aadhaar_number": "XXXX-XXXX-9012",
+    "mobile_number": "+91-96XXXXXXXX",
+    "language_preference": [
+      "Hindi",
+      "English"
+    ],
+    "location": {
+      "state": "Delhi",
+      "district": "Central Delhi",
+      "block": "Connaught Place",
+      "village_city": "Connaught Place",
+      "area_type": "Urban",
+      "pincode": "110001"
+    },
+    "occupation": {
+      "primary_occupation": "Street Vendor",
+      "occupation_category": "Street Vendor",
+      "monthly_income": 12000,
+      "income_source": "Vending",
+      "employment_type": "Self-employed",
+      "is_bpl": false
+    },
+    "farmer_details": {
+      "is_farmer": false,
+      "land_ownership": false,
+      "land_area_acres": 0,
+      "land_type": null,
+      "crops_grown": [],
+      "has_kisan_credit_card": false,
+      "farmer_category": null
+    },
+    "financial": {
+      "has_bank_account": true,
+      "bank_name": "HDFC Bank",
+      "account_number": "XXXX9012",
+      "ifsc_code": "HDFC0001234",
+      "is_income_tax_payer": false,
+      "annual_income": 144000
+    },
+    "social": {
+      "caste_category": "General",
+      "religion": "Hindu",
+      "minority_status": false
+    },
+    "family": {
+      "family_size": 3,
+      "dependents": 1,
+      "has_disabled_member": false,
+      "is_widow": false,
+      "has_adult_earning_member": true,
+      "female_head_of_family": false
+    },
+    "housing": {
+      "house_type": "Rented",
+      "owns_house": false,
+      "has_electricity": true,
+      "has_toilet": true
+    },
+    "documents": {
+      "aadhaar_card": true,
+      "pan_card": true,
+      "bank_passbook": true,
+      "land_records": false,
+      "bpl_card": false,
+      "ration_card": true,
+      "voter_id": true,
+      "driving_license": false
+    },
+    "schemes_enrolled": {
+      "current_schemes": [],
+      "past_schemes": []
+    },
+    "exclusions": {
+      "is_government_employee": false,
+      "is_pensioner": false,
+      "pension_amount": 0,
+      "owns_motorized_vehicle": false,
+      "is_professional": false,
+      "professional_type": "None",
+      "constitutional_post": false,
+      "is_mp_mla": false
+    },
+    "digital": {
+      "can_use_smartphone": true,
+      "internet_access": true,
+      "literacy_level": "Moderate"
+    },
+    "ai_profile_summary": "Urban street vendor with moderate income, digitally literate. Eligible for PM SVANidhi credit scheme for working capital. Good candidate for financial inclusion programs.",
+    "eligible_schemes_predicted": [
+      "SCH005"
+    ]
+  },
+  {
+    "citizen_id": "CIT004",
+    "full_name": "Manoj Yadav",
+    "name_hindi": "मनोज यादव",
+    "age": 32,
+    "gender": "Male",
+    "aadhaar_number": "XXXX-XXXX-3456",
+    "mobile_number": "+91-95XXXXXXXX",
+    "language_preference": [
+      "Hindi"
+    ],
+    "location": {
+      "state": "Uttar Pradesh",
+      "district": "Gautam Buddha Nagar",
+      "block": "Noida",
+      "village_city": "Noida",
+      "area_type": "Urban",
+      "pincode": "201301"
+    },
+    "occupation": {
+      "primary_occupation": "Construction Worker",
+      "occupation_category": "Unorganised Worker",
+      "monthly_income": 14000,
+      "income_source": "Daily Wage",
+      "employment_type": "Daily Wage",
+      "is_bpl": false
+    },
+    "farmer_details": {
+      "is_farmer": false,
+      "land_ownership": false,
+      "land_area_acres": 0,
+      "land_type": null,
+      "crops_grown": [],
+      "has_kisan_credit_card": false,
+      "farmer_category": null
+    },
+    "financial": {
+      "has_bank_account": true,
+      "bank_name": "Punjab National Bank",
+      "account_number": "XXXX3456",
+      "ifsc_code": "PUNB0012340",
+      "is_income_tax_payer": false,
+      "annual_income": 168000
+    },
+    "social": {
+      "caste_category": "OBC",
+      "religion": "Hindu",
+      "minority_status": false
+    },
+    "family": {
+      "family_size": 4,
+      "dependents": 2,
+      "has_disabled_member": false,
+      "is_widow": false,
+      "has_adult_earning_member": true,
+      "female_head_of_family": false
+    },
+    "housing": {
+      "house_type": "Rented",
+      "owns_house": false,
+      "has_electricity": true,
+      "has_toilet": true
+    },
+    "documents": {
+      "aadhaar_card": true,
+      "pan_card": false,
+      "bank_passbook": true,
+      "land_records": false,
+      "bpl_card": false,
+      "ration_card": true,
+      "voter_id": true,
+      "driving_license": false
+    },
+    "schemes_enrolled": {
+      "current_schemes": [],
+      "past_schemes": []
+    },
+    "exclusions": {
+      "is_government_employee": false,
+      "is_pensioner": false,
+      "pension_amount": 0,
+      "owns_motorized_vehicle": false,
+      "is_professional": false,
+      "professional_type": "None",
+      "constitutional_post": false,
+      "is_mp_mla": false
+    },
+    "digital": {
+      "can_use_smartphone": true,
+      "internet_access": true,
+      "literacy_level": "Basic"
+    },
+    "ai_profile_summary": "Young construction worker in unorganised sector, income below ₹15,000/month. Eligible for PM-SYM pension scheme. Age 32 is within enrollment window (18-40).",
+    "eligible_schemes_predicted": [
+      "SCH004",
+      "SCH006"
+    ]
+  },
+  {
+    "citizen_id": "CIT005",
+    "full_name": "Anand User",
+    "name_hindi": "आनंद यूजर",
+    "age": 30,
+    "gender": "Male",
+    "aadhaar_number": "XXXX-XXXX-9999",
+    "mobile_number": "+12397347677",
+    "language_preference": [
+      "English",
+      "Hindi"
+    ],
+    "location": {
+      "state": "Bihar",
+      "district": "Patna",
+      "block": "Patna Sadar",
+      "village_city": "Patna",
+      "area_type": "Urban",
+      "pincode": "800001"
+    },
+    "occupation": {
+      "primary_occupation": "Student",
+      "occupation_category": "Student",
+      "monthly_income": 0,
+      "income_source": "Family",
+      "employment_type": "None",
+      "is_bpl": false
+    },
+    "farmer_details": {
+      "is_farmer": false,
+      "land_ownership": false,
+      "land_area_acres": 0,
+      "land_type": null,
+      "crops_grown": [],
+      "has_kisan_credit_card": false,
+      "farmer_category": null
+    },
+    "financial": {
+      "has_bank_account": true,
+      "bank_name": "HDFC Bank",
+      "account_number": "XXXX9999",
+      "ifsc_code": "HDFC0009999",
+      "is_income_tax_payer": false,
+      "annual_income": 0
+    },
+    "social": {
+      "caste_category": "General",
+      "religion": "Hindu",
+      "minority_status": false
+    },
+    "family": {
+      "family_size": 1,
+      "dependents": 0,
+      "has_disabled_member": false,
+      "is_widow": false,
+      "has_adult_earning_member": true,
+      "female_head_of_family": false
+    },
+    "housing": {
+      "house_type": "Pucca",
+      "owns_house": true,
+      "has_electricity": true,
+      "has_toilet": true
+    },
+    "documents": {
+      "aadhaar_card": true,
+      "pan_card": true,
+      "bank_passbook": true,
+      "land_records": false,
+      "bpl_card": false,
+      "ration_card": false,
+      "voter_id": true,
+      "driving_license": true
+    },
+    "schemes_enrolled": {
+      "current_schemes": [],
+      "past_schemes": []
+    },
+    "exclusions": {
+      "is_government_employee": false,
+      "is_pensioner": false,
+      "pension_amount": 0,
+      "owns_motorized_vehicle": true,
+      "is_professional": false,
+      "professional_type": "None",
+      "constitutional_post": false,
+      "is_mp_mla": false
+    },
+    "digital": {
+      "can_use_smartphone": true,
+      "internet_access": true,
+      "literacy_level": "Advanced"
+    },
+    "ai_profile_summary": "Urban student with advanced digital literacy. No personal income. Target for educational scholarships and skill development schemes.",
+    "eligible_schemes_predicted": []
+  }
+]

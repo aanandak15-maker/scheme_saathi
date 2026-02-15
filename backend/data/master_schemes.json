@@ -1,0 +1,726 @@
+[
+    {
+        "scheme_id": "PM_KISAN",
+        "scheme_name": "PM-KISAN Samman Nidhi",
+        "scheme_name_hindi": "पीएम-किसान सम्मान निधि",
+        "category": "Agriculture",
+        "subcategory": "Farmer Income Support",
+        "ministry": "Ministry of Agriculture & Farmers Welfare",
+        "launched_year": 2019,
+        "benefit_amount": "₹6,000 per year",
+        "benefit_type": "Direct Cash Transfer",
+        "description": "₹6000/year direct income support to farmer families in 3 installments.",
+        "eligibility_criteria": {
+            "age_min": 18,
+            "occupation": [
+                "farmer"
+            ],
+            "land_ownership": true,
+            "exclusions": [
+                "institutional_farmer",
+                "govt_employee",
+                "income_tax_payer"
+            ],
+            "engine_rules": {
+                "rule_type": "inclusion_with_exclusions",
+                "logic": "AND",
+                "inclusion_rules": [
+                    {
+                        "rule_id": "PM_KISAN_R1",
+                        "field": "is_farmer",
+                        "operator": "equals",
+                        "value": true,
+                        "weight": 15,
+                        "explanation": "Must be a farmer"
+                    },
+                    {
+                        "rule_id": "PM_KISAN_R2",
+                        "field": "land_ownership.owns_land",
+                        "operator": "equals",
+                        "value": true,
+                        "weight": 15,
+                        "explanation": "Must own cultivable land"
+                    }
+                ],
+                "exclusion_rules": [
+                    {
+                        "rule_id": "PM_KISAN_E1",
+                        "field": "occupation.income_level",
+                        "operator": "equals",
+                        "value": "High",
+                        "disqualifies": true,
+                        "explanation": "High income families are not eligible"
+                    }
+                ],
+                "minimum_score": 15
+            }
+        },
+        "application_process": {
+            "portal_url": "https://pmkisan.gov.in",
+            "steps": [
+                "Register on portal",
+                "Aadhaar eKYC",
+                "Land details",
+                "Submit"
+            ]
+        },
+        "required_documents": [
+            {
+                "doc_name": "Aadhaar Card",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Land Records/Ownership Proof",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Bank Account Passbook",
+                "mandatory": true
+            }
+        ],
+        "ai_context": {
+            "target_audience": "Farmers",
+            "typical_profile": "Land-owning farmer needing income support"
+        },
+        "status": "Active"
+    },
+    {
+        "scheme_id": "PMFBY",
+        "scheme_name": "Pradhan Mantri Fasal Bima Yojana",
+        "scheme_name_hindi": "प्रधानमंत्री फसल बीमा योजना",
+        "category": "Agriculture",
+        "subcategory": "Crop Insurance",
+        "ministry": "Ministry of Agriculture & Farmers Welfare",
+        "launched_year": 2016,
+        "benefit_amount": "Crop Insurance Coverage",
+        "benefit_type": "Insurance",
+        "description": "Crop insurance scheme covering natural calamities, pests, diseases.",
+        "eligibility_criteria": {
+            "occupation": [
+                "farmer"
+            ],
+            "includes_tenant_farmers": true,
+            "engine_rules": {
+                "rule_type": "inclusion_based",
+                "logic": "AND",
+                "inclusion_rules": [
+                    {
+                        "rule_id": "PMFBY_R1",
+                        "field": "is_farmer",
+                        "operator": "equals",
+                        "value": true,
+                        "weight": 10,
+                        "explanation": "Must be a farmer"
+                    },
+                    {
+                        "rule_id": "PMFBY_R2",
+                        "field": "farmer_details.crops_grown",
+                        "operator": "not_empty",
+                        "value": null,
+                        "weight": 10,
+                        "explanation": "Must be growing notified crops"
+                    }
+                ],
+                "exclusion_rules": [],
+                "minimum_score": 15
+            }
+        },
+        "application_process": {
+            "portal_url": "https://pmfby.gov.in",
+            "steps": [
+                "Enroll before sowing",
+                "Pay premium",
+                "Submit crop details"
+            ]
+        },
+        "required_documents": [
+            {
+                "doc_name": "Aadhaar Card",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Land/Lease Records",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Sowing Certificate",
+                "mandatory": true
+            }
+        ],
+        "ai_context": {
+            "target_audience": "Farmers with risks",
+            "typical_profile": "Farmer seeking crop protection"
+        },
+        "status": "Active"
+    },
+    {
+        "scheme_id": "KCC",
+        "scheme_name": "Kisan Credit Card (KCC)",
+        "scheme_name_hindi": "किसान क्रेडिट कार्ड",
+        "category": "Agriculture",
+        "subcategory": "Credit",
+        "ministry": "Ministry of Finance",
+        "benefit_amount": "Up to ₹3 Lakh Credit",
+        "benefit_type": "Credit",
+        "description": "Credit facility for farmers at subsidized interest rate of 4%.",
+        "eligibility_criteria": {
+            "age_min": 18,
+            "age_max": 75,
+            "occupation": [
+                "farmer",
+                "fisherman",
+                "animal_husbandry"
+            ]
+        },
+        "application_process": {
+            "portal_url": "https://pmkisan.gov.in/KCC",
+            "steps": [
+                "Apply at Bank/CSC",
+                "Submit land docs",
+                "Get card"
+            ]
+        },
+        "required_documents": [
+            {
+                "doc_name": "Aadhaar Card",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Land Records",
+                "mandatory": true
+            },
+            {
+                "doc_name": "PAN Card",
+                "mandatory": false
+            }
+        ],
+        "ai_context": {
+            "target_audience": "Farmers needing loan",
+            "typical_profile": "Farmer needing short term credit"
+        },
+        "status": "Active"
+    },
+    {
+        "scheme_id": "PM_KUSUM",
+        "scheme_name": "PM-KUSUM (Solar Pump)",
+        "scheme_name_hindi": "पीएम-कुसुम (सोलर पंप)",
+        "category": "Agriculture",
+        "benefit_amount": "60% Subsidy",
+        "benefit_type": "Subsidy",
+        "description": "Solar pump installation with 60% subsidy for farmers.",
+        "eligibility_criteria": {
+            "occupation": [
+                "farmer"
+            ],
+            "land_ownership": true
+        },
+        "application_process": {
+            "portal_url": "https://pmkusum.mnre.gov.in",
+            "steps": [
+                "Apply Online",
+                "Pay contribution",
+                "Installation"
+            ]
+        },
+        "required_documents": [
+            {
+                "doc_name": "Aadhaar Card",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Land Records",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Electricity Bill",
+                "mandatory": false
+            }
+        ],
+        "ai_context": {
+            "target_audience": "Farmers needing irrigation",
+            "typical_profile": "Farmer facing high diesel/electricity costs"
+        },
+        "status": "Active"
+    },
+    {
+        "scheme_id": "UJJWALA",
+        "scheme_name": "Pradhan Mantri Ujjwala Yojana 2.0",
+        "scheme_name_hindi": "प्रधानमंत्री उज्ज्वला योजना 2.0",
+        "category": "Women",
+        "benefit_amount": "Free LPG Connection + Refill",
+        "benefit_type": "In-kind",
+        "description": "Free LPG connection to BPL households with deposit and first refill free.",
+        "eligibility_criteria": {
+            "gender": "female",
+            "age_min": 18,
+            "is_bpl": true,
+            "no_existing_lpg": true
+        },
+        "application_process": {
+            "portal_url": "https://www.pmujjwalayojana.com",
+            "steps": [
+                "Apply at Distributor",
+                "KYC",
+                "Get Connection"
+            ]
+        },
+        "required_documents": [
+            {
+                "doc_name": "Aadhaar Card",
+                "mandatory": true
+            },
+            {
+                "doc_name": "BPL/Ration Card",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Bank Passbook",
+                "mandatory": true
+            }
+        ],
+        "ai_context": {
+            "target_audience": "Poor women",
+            "typical_profile": "Rural woman using firewood for cooking"
+        },
+        "status": "Active"
+    },
+    {
+        "scheme_id": "SUKANYA_SAMRIDDHI",
+        "scheme_name": "Sukanya Samriddhi Yojana",
+        "scheme_name_hindi": "सुकन्या समृद्धि योजना",
+        "category": "Women",
+        "benefit_amount": "8.2% Interest",
+        "benefit_type": "Savings",
+        "description": "High interest savings scheme for girl child with tax benefits.",
+        "eligibility_criteria": {
+            "target_beneficiary": "Girl Child",
+            "age_max": 10,
+            "max_girls": 2
+        },
+        "application_process": {
+            "portal_url": "Post Office/Bank",
+            "steps": [
+                "Visit Post Office",
+                "Open Account",
+                "Deposit Yearly"
+            ]
+        },
+        "required_documents": [
+            {
+                "doc_name": "Birth Certificate",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Parent Aadhaar",
+                "mandatory": true
+            }
+        ],
+        "ai_context": {
+            "target_audience": "Parents of girl child",
+            "typical_profile": "Parent saving for daughter's education/marriage"
+        },
+        "status": "Active"
+    },
+    {
+        "scheme_id": "MATRU_VANDANA",
+        "scheme_name": "PM Matru Vandana Yojana",
+        "scheme_name_hindi": "प्रधानमंत्री मातृ वंदना योजना",
+        "category": "Women",
+        "benefit_amount": "₹5,000",
+        "benefit_type": "Cash Transfer",
+        "description": "₹5000 cash incentive to pregnant/lactating mothers for first live birth.",
+        "eligibility_criteria": {
+            "gender": "female",
+            "age_min": 19,
+            "condition": "Pregnant/Lactating",
+            "first_child": true,
+            "exclusions": [
+                "govt_employee"
+            ],
+            "engine_rules": {
+                "rule_type": "inclusion_based",
+                "logic": "AND",
+                "inclusion_rules": [
+                    {
+                        "rule_id": "MVY_R1",
+                        "field": "gender",
+                        "operator": "equals",
+                        "value": "female",
+                        "weight": 10,
+                        "explanation": "Must be female"
+                    },
+                    {
+                        "rule_id": "MVY_R2",
+                        "field": "age",
+                        "operator": "greater_than",
+                        "value": 18,
+                        "weight": 10,
+                        "explanation": "Must be at least 19 years old"
+                    }
+                ],
+                "exclusion_rules": [],
+                "minimum_score": 20
+            }
+        },
+        "application_process": {
+            "portal_url": "https://pmmvy.wcd.gov.in",
+            "steps": [
+                "Register at Anganwadi",
+                "Submit MCP Card",
+                "Receive Installments"
+            ]
+        },
+        "required_documents": [
+            {
+                "doc_name": "Aadhaar Card",
+                "mandatory": true
+            },
+            {
+                "doc_name": "MCP Card",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Bank Account Passbook",
+                "mandatory": true
+            }
+        ],
+        "ai_context": {
+            "target_audience": "Pregnant women",
+            "typical_profile": "First time mother needing nutritional support"
+        },
+        "status": "Active"
+    },
+    {
+        "scheme_id": "AYUSHMAN_BHARAT",
+        "scheme_name": "Ayushman Bharat (PM-JAY)",
+        "scheme_name_hindi": "आयुष्मान भारत - पीएम-जय",
+        "category": "Health",
+        "benefit_amount": "₹5 Lakh Cover",
+        "benefit_type": "Insurance",
+        "description": "₹5 lakh/year free health insurance for BPL families covering secondary/tertiary care.",
+        "eligibility_criteria": {
+            "is_bpl": true,
+            "secc_list": true,
+            "engine_rules": {
+                "rule_type": "inclusion_based",
+                "logic": "AND",
+                "inclusion_rules": [
+                    {
+                        "rule_id": "AB_R1",
+                        "field": "is_bpl",
+                        "operator": "equals",
+                        "value": true,
+                        "weight": 10,
+                        "explanation": "Must be BPL"
+                    }
+                ],
+                "exclusion_rules": [],
+                "minimum_score": 10
+            }
+        },
+        "application_process": {
+            "portal_url": "https://pmjay.gov.in",
+            "steps": [
+                "Check eligibility online",
+                "Make Ayushman Card",
+                "Cashless treatment"
+            ]
+        },
+        "required_documents": [
+            {
+                "doc_name": "Aadhaar Card",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Ration Card",
+                "mandatory": true
+            }
+        ],
+        "ai_context": {
+            "target_audience": "BPL families",
+            "typical_profile": "Poor family fearing medical bills"
+        },
+        "status": "Active"
+    },
+    {
+        "scheme_id": "PM_VIDYALAKSHMI",
+        "scheme_name": "PM Vidyalakshmi Education Loan",
+        "scheme_name_hindi": "पीएम विद्यालक्ष्मी शिक्षा ऋण",
+        "category": "Education",
+        "benefit_amount": "Education Loan Subsidy",
+        "benefit_type": "Loan Subsidy",
+        "description": "Education loan portal with interest subsidy for students from EWS.",
+        "eligibility_criteria": {
+            "student": true,
+            "age_min": 16,
+            "income_max": 450000
+        },
+        "application_process": {
+            "portal_url": "https://www.vidyalakshmi.co.in",
+            "steps": [
+                "Apply on portal",
+                "Select Bank",
+                "Loan Sanction"
+            ]
+        },
+        "required_documents": [
+            {
+                "doc_name": "Aadhaar Card",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Admission Letter",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Income Certificate",
+                "mandatory": true
+            }
+        ],
+        "ai_context": {
+            "target_audience": "Students",
+            "typical_profile": "Meritorious student needing funds for college"
+        },
+        "status": "Active"
+    },
+    {
+        "scheme_id": "PMAY_URBAN",
+        "scheme_name": "PM Awas Yojana (Urban)",
+        "scheme_name_hindi": "प्रधानमंत्री आवास योजना (शहरी)",
+        "category": "Housing",
+        "benefit_amount": "Interest Subsidy (up to ₹2.67L)",
+        "benefit_type": "Subsidy",
+        "description": "Affordable housing with interest subsidy for urban poor (EWS/LIG).",
+        "eligibility_criteria": {
+            "urban": true,
+            "no_pucca_house": true,
+            "income_max": 600000
+        },
+        "application_process": {
+            "portal_url": "https://pmaymis.gov.in",
+            "steps": [
+                "Apply Online/CSC",
+                "Validation",
+                "Subsidy Credit"
+            ]
+        },
+        "required_documents": [
+            {
+                "doc_name": "Aadhaar Card",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Income Certificate",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Affidavit (No House)",
+                "mandatory": true
+            }
+        ],
+        "ai_context": {
+            "target_audience": "Urban poor",
+            "typical_profile": "Rented family in city wanting own home"
+        },
+        "status": "Active"
+    },
+    {
+        "scheme_id": "MUDRA",
+        "scheme_name": "PM Mudra Yojana",
+        "scheme_name_hindi": "प्रधानमंत्री मुद्रा योजना",
+        "category": "Financial Inclusion",
+        "benefit_amount": "Loan up to ₹10 Lakh",
+        "benefit_type": "Loan",
+        "description": "Collateral-free loans for small businesses (Shishu/Kishore/Tarun).",
+        "eligibility_criteria": {
+            "age_min": 18,
+            "business_plan": true,
+            "non_corporate": true
+        },
+        "application_process": {
+            "portal_url": "https://www.mudra.org.in",
+            "steps": [
+                "Submit Business Plan to Bank",
+                "Sanction",
+                "Disbursal"
+            ]
+        },
+        "required_documents": [
+            {
+                "doc_name": "Aadhaar/PAN",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Business Plan",
+                "mandatory": true
+            }
+        ],
+        "ai_context": {
+            "target_audience": "Small entrepreneurs",
+            "typical_profile": "Shopkeeper or trader needing capital"
+        },
+        "status": "Active"
+    },
+    {
+        "scheme_id": "MGNREGA",
+        "scheme_name": "MGNREGA",
+        "scheme_name_hindi": "मनरेगा",
+        "category": "Employment",
+        "benefit_amount": "100 Days Wage Employment",
+        "benefit_type": "Employment",
+        "description": "100 days guaranteed unskilled manual work per year per rural household.",
+        "eligibility_criteria": {
+            "age_min": 18,
+            "rural": true,
+            "unskilled_work": true
+        },
+        "application_process": {
+            "portal_url": "Gram Panchayat",
+            "steps": [
+                "Apply for Job Card",
+                "Demand Work",
+                "Get Work in 15 days"
+            ]
+        },
+        "required_documents": [
+            {
+                "doc_name": "Aadhaar Card",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Job Card",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Bank Passbook",
+                "mandatory": true
+            }
+        ],
+        "ai_context": {
+            "target_audience": "Rural Labour",
+            "typical_profile": "Rural resident needing work"
+        },
+        "status": "Active"
+    },
+    {
+        "scheme_id": "OLD_AGE_PENSION",
+        "scheme_name": "NSAP - Old Age Pension",
+        "scheme_name_hindi": "वृद्धावस्था पेंशन",
+        "category": "Pension",
+        "benefit_amount": "₹200-500/month",
+        "benefit_type": "Pension",
+        "description": "Monthly pension for BPL elderly citizens above 60 years.",
+        "eligibility_criteria": {
+            "age_min": 60,
+            "is_bpl": true
+        },
+        "application_process": {
+            "portal_url": "https://nsap.nic.in",
+            "steps": [
+                "Apply at Gram Panchayat/Block",
+                "Sanction",
+                "Pension to Account"
+            ]
+        },
+        "required_documents": [
+            {
+                "doc_name": "Aadhaar Card",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Age Proof",
+                "mandatory": true
+            },
+            {
+                "doc_name": "BPL Card",
+                "mandatory": true
+            }
+        ],
+        "ai_context": {
+            "target_audience": "Elderly Poor",
+            "typical_profile": "Senior citizen with no income support"
+        },
+        "status": "Active"
+    },
+    {
+        "scheme_id": "SKILL_INDIA",
+        "scheme_name": "Skill India / PMKVY",
+        "scheme_name_hindi": "स्किल इंडिया",
+        "category": "Education",
+        "benefit_amount": "Free Training + ₹8000",
+        "benefit_type": "Training",
+        "description": "Free skill training with certification and reward money.",
+        "eligibility_criteria": {
+            "age_min": 15,
+            "age_max": 45,
+            "unemployed": true
+        },
+        "application_process": {
+            "portal_url": "https://www.pmkvyofficial.org",
+            "steps": [
+                "Register",
+                "Choose Course",
+                "Complete Training",
+                "Certification"
+            ]
+        },
+        "required_documents": [
+            {
+                "doc_name": "Aadhaar Card",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Bank Passbook",
+                "mandatory": true
+            }
+        ],
+        "ai_context": {
+            "target_audience": "Unemployed Youth",
+            "typical_profile": "School dropout wanting to learn a trade"
+        },
+        "status": "Active"
+    },
+    {
+        "scheme_id": "LADLI_BEHNA_MP",
+        "scheme_name": "Ladli Behna Yojana (MP)",
+        "scheme_name_hindi": "लाड़ली बहना योजना (मप्र)",
+        "category": "Women",
+        "benefit_amount": "₹1,250 per month",
+        "benefit_type": "Cash Transfer",
+        "description": "Monthly financial assistance to women aged 21-60 in Madhya Pradesh.",
+        "eligibility_criteria": {
+            "state": "Madhya Pradesh",
+            "gender": "female",
+            "age_min": 21,
+            "age_max": 60,
+            "income_max": 250000
+        },
+        "application_process": {
+            "portal_url": "https://ladlibahna.mp.gov.in",
+            "steps": [
+                "Camp Registration",
+                "Aadhaar Linking",
+                "Monthly Transfer"
+            ]
+        },
+        "required_documents": [
+            {
+                "doc_name": "Aadhaar Card",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Samagra ID",
+                "mandatory": true
+            },
+            {
+                "doc_name": "Bank Account",
+                "mandatory": true
+            }
+        ],
+        "ai_context": {
+            "target_audience": "Women in MP",
+            "typical_profile": "Household woman needing financial independence"
+        },
+        "status": "Active"
+    }
+]

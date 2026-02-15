@@ -1,0 +1,34 @@
+{
+  "dataset_version": "1.0",
+  "created_date": "2026-02-15",
+  "statistics": {
+    "total_schemes": 6,
+    "schemes_by_category": {
+      "Agriculture": 2,
+      "Housing": 1,
+      "Social Security": 1,
+      "Financial Inclusion": 1,
+      "Insurance": 1
+    },
+    "total_test_citizens": 4,
+    "total_documents": 15,
+    "total_eligibility_rules": 31,
+    "citizen_profile_fields": 12,
+    "languages_supported": [
+      "Hindi",
+      "English"
+    ]
+  },
+  "files_generated": [
+    "schemes_database.json",
+    "citizen_profile_schema.json",
+    "citizen_profiles_test_data.json",
+    "eligibility_rules_engine.json",
+    "documents_master.json",
+    "schemes_summary.csv",
+    "test_citizens_summary.csv",
+    "documents_master.csv",
+    "DATASET_README.md",
+    "dataset_statistics.json"
+  ]
+}

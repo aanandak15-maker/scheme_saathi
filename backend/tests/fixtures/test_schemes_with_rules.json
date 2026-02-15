@@ -1,0 +1,157 @@
+[
+    {
+        "scheme_id": "SCH001",
+        "scheme_name": "PM-KISAN",
+        "eligibility_criteria": {
+            "engine_rules": {
+                "minimum_score": 20,
+                "inclusion_rules": [
+                    {
+                        "rule_id": "farmer_check",
+                        "field": "farmer_details.is_farmer",
+                        "operator": "equals",
+                        "value": true,
+                        "weight": 10,
+                        "explanation": "Primary occupation must be farming"
+                    },
+                    {
+                        "rule_id": "land_check",
+                        "field": "farmer_details.land_ownership",
+                        "operator": "equals",
+                        "value": true,
+                        "weight": 10,
+                        "explanation": "Must own cultivable land"
+                    }
+                ],
+                "exclusion_rules": [
+                    {
+                        "rule_id": "tax_check",
+                        "field": "financial.is_income_tax_payer",
+                        "operator": "equals",
+                        "value": true,
+                        "explanation": "Income tax payers are excluded"
+                    },
+                    {
+                        "rule_id": "govt_emp_check",
+                        "field": "exclusions.is_government_employee",
+                        "operator": "equals",
+                        "value": true,
+                        "explanation": "Government employees are excluded"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "scheme_id": "SCH003",
+        "scheme_name": "PMAY-G",
+        "eligibility_criteria": {
+            "engine_rules": {
+                "minimum_score": 15,
+                "inclusion_rules": [
+                    {
+                        "rule_id": "rural_check",
+                        "field": "location.area_type",
+                        "operator": "equals",
+                        "value": "Rural",
+                        "weight": 5,
+                        "explanation": "Must reside in a rural area"
+                    },
+                    {
+                        "rule_id": "bpl_check",
+                        "field": "occupation.is_bpl",
+                        "operator": "equals",
+                        "value": true,
+                        "weight": 10,
+                        "explanation": "Priority for BPL households"
+                    },
+                    {
+                        "rule_id": "kutcha_house_check",
+                        "field": "housing.house_type",
+                        "operator": "in",
+                        "value": [
+                            "Kutcha",
+                            "Semi-pucca"
+                        ],
+                        "weight": 10,
+                        "explanation": "Must have kutcha or semi-pucca house"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "scheme_id": "SCH005",
+        "scheme_name": "PM SVANidhi",
+        "eligibility_criteria": {
+            "engine_rules": {
+                "minimum_score": 20,
+                "inclusion_rules": [
+                    {
+                        "rule_id": "vendor_check",
+                        "field": "occupation.primary_occupation",
+                        "operator": "equals",
+                        "value": "Street Vendor",
+                        "weight": 15,
+                        "explanation": "Must be a street vendor"
+                    },
+                    {
+                        "rule_id": "urban_check",
+                        "field": "location.area_type",
+                        "operator": "equals",
+                        "value": "Urban",
+                        "weight": 10,
+                        "explanation": "Urban street vendors are eligible"
+                    }
+                ]
+            }
+        }
+    },
+    {
+        "scheme_id": "SCH004",
+        "scheme_name": "PM-SYM",
+        "eligibility_criteria": {
+            "engine_rules": {
+                "minimum_score": 25,
+                "inclusion_rules": [
+                    {
+                        "rule_id": "unorganised_check",
+                        "field": "occupation.occupation_category",
+                        "operator": "equals",
+                        "value": "Unorganised Worker",
+                        "weight": 10,
+                        "explanation": "Must be an unorganised worker"
+                    },
+                    {
+                        "rule_id": "age_range",
+                        "field": "age",
+                        "operator": "between",
+                        "value": [
+                            18,
+                            40
+                        ],
+                        "weight": 10,
+                        "explanation": "Age must be between 18 and 40"
+                    },
+                    {
+                        "rule_id": "income_limit",
+                        "field": "occupation.monthly_income",
+                        "operator": "less_than_equal",
+                        "value": 15000,
+                        "weight": 10,
+                        "explanation": "Monthly income must be below 15000"
+                    }
+                ],
+                "exclusion_rules": [
+                    {
+                        "rule_id": "tax_check_sym",
+                        "field": "financial.is_income_tax_payer",
+                        "operator": "equals",
+                        "value": true,
+                        "explanation": "Income tax payers are excluded"
+                    }
+                ]
+            }
+        }
+    }
+]

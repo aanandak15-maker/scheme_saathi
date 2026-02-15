@@ -1,0 +1,16 @@
+﻿doc_id,doc_name,doc_type,issuing_authority,validity,digital_available
+DOC001,Aadhaar Card,Identity,UIDAI,Lifetime,True
+DOC002,Land Records/Ownership Proof,Property,Revenue Department,NA,True
+DOC003,Bank Account Passbook,Financial,Bank,Active,True
+DOC004,Mobile Number (Aadhaar linked),Communication,Telecom Provider,Active,True
+DOC005,Land Records/Lease Agreement,Property,Revenue Dept/Lessor,Varies,False
+DOC006,Sowing Certificate,Agriculture,Village Patwari/Agriculture Dept,Season-specific,False
+DOC007,Crop Details,Agriculture,Self-declaration,Season-specific,False
+DOC008,BPL Card,Economic Status,State Government,Varies,False
+DOC009,SECC Data,Economic Status,MoRD,2011 Census,True
+DOC010,Job Card (MGNREGA),Employment,Gram Panchayat,Active,True
+DOC011,Mobile Number,Communication,Telecom Provider,Active,True
+DOC012,Self-declaration of Income,Financial,Self,Annual,False
+DOC013,Vending Certificate/LoR,Occupation,ULB/Municipal Corporation,Varies,False
+DOC014,Photograph,Identity,Self,NA,False
+DOC015,Nominee Details,Legal,Self,NA,False

@@ -1,0 +1,5 @@
+﻿Citizen ID,Name,Age,Location,Occupation,Monthly Income,Is Farmer,Land (acres),BPL,Predicted Eligible
+CIT001,Ramesh Kumar,42,"Rithora, Gautam Buddha Nagar",Farmer,8000,True,1.5,False,"SCH001, SCH002"
+CIT002,Sunita Devi,38,"Khajpura, Patna",Agricultural Labor,4000,False,0.0,True,SCH003
+CIT003,Rajesh Sharma,28,"Connaught Place, Central Delhi",Street Vendor,12000,False,0.0,False,SCH005
+CIT004,Manoj Yadav,32,"Noida, Gautam Buddha Nagar",Construction Worker,14000,False,0.0,False,"SCH004, SCH006"

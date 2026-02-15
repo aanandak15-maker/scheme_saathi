@@ -1,0 +1,386 @@
+{
+  "version": "1.0",
+  "description": "Rule-based eligibility engine for Scheme Saathi - combines with LLM reasoning",
+  "rules_by_scheme": {
+    "SCH001": {
+      "scheme_name": "PM-KISAN",
+      "rule_type": "inclusion_with_exclusions",
+      "logic": "AND",
+      "inclusion_rules": [
+        {
+          "rule_id": "R001_01",
+          "field": "is_farmer",
+          "operator": "equals",
+          "value": true,
+          "weight": 10,
+          "explanation": "Must be a farmer with cultivable land"
+        },
+        {
+          "rule_id": "R001_02",
+          "field": "land_ownership",
+          "operator": "equals",
+          "value": true,
+          "weight": 10,
+          "explanation": "Must own cultivable land as per land records"
+        },
+        {
+          "rule_id": "R001_03",
+          "field": "documents.aadhaar_card",
+          "operator": "equals",
+          "value": true,
+          "weight": 8,
+          "explanation": "Aadhaar card is mandatory"
+        },
+        {
+          "rule_id": "R001_04",
+          "field": "financial.has_bank_account",
+          "operator": "equals",
+          "value": true,
+          "weight": 8,
+          "explanation": "Bank account required for DBT"
+        }
+      ],
+      "exclusion_rules": [
+        {
+          "rule_id": "R001_E01",
+          "field": "exclusions.is_government_employee",
+          "operator": "equals",
+          "value": true,
+          "disqualifies": true,
+          "explanation": "Government employees (except Group D) are not eligible"
+        },
+        {
+          "rule_id": "R001_E02",
+          "field": "financial.is_income_tax_payer",
+          "operator": "equals",
+          "value": true,
+          "disqualifies": true,
+          "explanation": "Income tax payers in last assessment year not eligible"
+        },
+        {
+          "rule_id": "R001_E03",
+          "field": "exclusions.is_professional",
+          "operator": "equals",
+          "value": true,
+          "disqualifies": true,
+          "explanation": "Registered professionals (Doctor, Engineer, CA, Lawyer) not eligible"
+        },
+        {
+          "rule_id": "R001_E04",
+          "field": "exclusions.is_mp_mla",
+          "operator": "equals",
+          "value": true,
+          "disqualifies": true,
+          "explanation": "MPs, MLAs, constitutional post holders not eligible"
+        },
+        {
+          "rule_id": "R001_E05",
+          "field": "exclusions.pension_amount",
+          "operator": "greater_than",
+          "value": 10000,
+          "disqualifies": true,
+          "explanation": "Pensioners receiving >₹10,000/month not eligible (except Group D)"
+        }
+      ],
+      "minimum_score": 30,
+      "alternative_schemes": [
+        "SCH002",
+        "SCH004"
+      ]
+    },
+    "SCH002": {
+      "scheme_name": "PMFBY",
+      "rule_type": "inclusion_based",
+      "logic": "AND",
+      "inclusion_rules": [
+        {
+          "rule_id": "R002_01",
+          "field": "is_farmer",
+          "operator": "equals",
+          "value": true,
+          "weight": 10,
+          "explanation": "Must be a farmer (owner, tenant, or sharecropper)"
+        },
+        {
+          "rule_id": "R002_02",
+          "field": "documents.land_records",
+          "operator": "equals",
+          "value": true,
+          "weight": 8,
+          "explanation": "Land records or lease agreement required"
+        },
+        {
+          "rule_id": "R002_03",
+          "field": "farmer_details.crops_grown",
+          "operator": "not_empty",
+          "value": null,
+          "weight": 7,
+          "explanation": "Must be growing notified crops"
+        },
+        {
+          "rule_id": "R002_04",
+          "field": "financial.has_bank_account",
+          "operator": "equals",
+          "value": true,
+          "weight": 8,
+          "explanation": "Bank account required for premium and claims"
+        }
+      ],
+      "exclusion_rules": [],
+      "minimum_score": 28,
+      "alternative_schemes": [
+        "SCH001"
+      ]
+    },
+    "SCH003": {
+      "scheme_name": "PMAY-G",
+      "rule_type": "inclusion_with_exclusions",
+      "logic": "AND",
+      "inclusion_rules": [
+        {
+          "rule_id": "R003_01",
+          "field": "location.area_type",
+          "operator": "equals",
+          "value": "Rural",
+          "weight": 10,
+          "explanation": "Must be from rural area"
+        },
+        {
+          "rule_id": "R003_02",
+          "field": "occupation.is_bpl",
+          "operator": "equals",
+          "value": true,
+          "weight": 10,
+          "explanation": "Must be Below Poverty Line"
+        },
+        {
+          "rule_id": "R003_03",
+          "field": "housing.house_type",
+          "operator": "in",
+          "value": [
+            "Kutcha",
+            "No House"
+          ],
+          "weight": 10,
+          "explanation": "Must be houseless or have kutcha house"
+        },
+        {
+          "rule_id": "R003_04",
+          "field": "documents.bpl_card",
+          "operator": "equals",
+          "value": true,
+          "weight": 7,
+          "explanation": "BPL card or SECC data required"
+        }
+      ],
+      "special_priority_rules": [
+        {
+          "rule_id": "R003_P01",
+          "field": "family.has_disabled_member",
+          "operator": "equals",
+          "value": true,
+          "priority_boost": 5,
+          "explanation": "Priority for families with disabled member"
+        },
+        {
+          "rule_id": "R003_P02",
+          "field": "family.is_widow",
+          "operator": "equals",
+          "value": true,
+          "priority_boost": 5,
+          "explanation": "Priority for widow-headed families"
+        },
+        {
+          "rule_id": "R003_P03",
+          "field": "family.female_head_of_family",
+          "operator": "equals",
+          "value": true,
+          "priority_boost": 3,
+          "explanation": "Priority for female-headed families"
+        }
+      ],
+      "exclusion_rules": [
+        {
+          "rule_id": "R003_E01",
+          "field": "housing.house_type",
+          "operator": "equals",
+          "value": "Pucca",
+          "disqualifies": true,
+          "explanation": "Families with pucca house not eligible"
+        },
+        {
+          "rule_id": "R003_E02",
+          "field": "exclusions.is_government_employee",
+          "operator": "equals",
+          "value": true,
+          "disqualifies": true,
+          "explanation": "Government employees not eligible"
+        },
+        {
+          "rule_id": "R003_E03",
+          "field": "exclusions.owns_motorized_vehicle",
+          "operator": "equals",
+          "value": true,
+          "disqualifies": true,
+          "explanation": "Families with motorized vehicles not eligible"
+        }
+      ],
+      "minimum_score": 32,
+      "alternative_schemes": []
+    },
+    "SCH004": {
+      "scheme_name": "PM-SYM",
+      "rule_type": "inclusion_with_exclusions",
+      "logic": "AND",
+      "inclusion_rules": [
+        {
+          "rule_id": "R004_01",
+          "field": "age",
+          "operator": "between",
+          "value": [
+            18,
+            40
+          ],
+          "weight": 10,
+          "explanation": "Age must be between 18-40 years for enrollment"
+        },
+        {
+          "rule_id": "R004_02",
+          "field": "occupation.monthly_income",
+          "operator": "less_than_equal",
+          "value": 15000,
+          "weight": 10,
+          "explanation": "Monthly income must be below ₹15,000"
+        },
+        {
+          "rule_id": "R004_03",
+          "field": "occupation.occupation_category",
+          "operator": "in",
+          "value": [
+            "Unorganised Worker",
+            "Street Vendor",
+            "Construction Worker",
+            "Agricultural Labor"
+          ],
+          "weight": 9,
+          "explanation": "Must be an unorganised sector worker"
+        },
+        {
+          "rule_id": "R004_04",
+          "field": "financial.has_bank_account",
+          "operator": "equals",
+          "value": true,
+          "weight": 8,
+          "explanation": "Bank account with IFSC required for contribution"
+        }
+      ],
+      "exclusion_rules": [
+        {
+          "rule_id": "R004_E01",
+          "field": "financial.is_income_tax_payer",
+          "operator": "equals",
+          "value": true,
+          "disqualifies": true,
+          "explanation": "Income tax payers not eligible"
+        }
+      ],
+      "minimum_score": 32,
+      "alternative_schemes": [
+        "SCH006"
+      ]
+    },
+    "SCH005": {
+      "scheme_name": "PM SVANidhi",
+      "rule_type": "inclusion_based",
+      "logic": "AND",
+      "inclusion_rules": [
+        {
+          "rule_id": "R005_01",
+          "field": "occupation.occupation_category",
+          "operator": "equals",
+          "value": "Street Vendor",
+          "weight": 10,
+          "explanation": "Must be a street vendor"
+        },
+        {
+          "rule_id": "R005_02",
+          "field": "location.area_type",
+          "operator": "in",
+          "value": [
+            "Urban",
+            "Semi-Urban"
+          ],
+          "weight": 9,
+          "explanation": "Must operate in urban or peri-urban area"
+        },
+        {
+          "rule_id": "R005_03",
+          "field": "financial.has_bank_account",
+          "operator": "equals",
+          "value": true,
+          "weight": 8,
+          "explanation": "Bank account required for loan disbursement"
+        }
+      ],
+      "exclusion_rules": [],
+      "minimum_score": 22,
+      "alternative_schemes": []
+    },
+    "SCH006": {
+      "scheme_name": "PMJJBY",
+      "rule_type": "inclusion_based",
+      "logic": "AND",
+      "inclusion_rules": [
+        {
+          "rule_id": "R006_01",
+          "field": "age",
+          "operator": "between",
+          "value": [
+            18,
+            50
+          ],
+          "weight": 10,
+          "explanation": "Age must be between 18-50 years for enrollment"
+        },
+        {
+          "rule_id": "R006_02",
+          "field": "financial.has_bank_account",
+          "operator": "equals",
+          "value": true,
+          "weight": 10,
+          "explanation": "Savings bank account required for premium deduction"
+        },
+        {
+          "rule_id": "R006_03",
+          "field": "documents.aadhaar_card",
+          "operator": "equals",
+          "value": true,
+          "weight": 7,
+          "explanation": "Aadhaar required for KYC"
+        }
+      ],
+      "exclusion_rules": [],
+      "minimum_score": 22,
+      "alternative_schemes": [
+        "SCH004"
+      ]
+    }
+  },
+  "global_rules": {
+    "mandatory_documents": [
+      "aadhaar_card",
+      "bank_account"
+    ],
+    "age_verification_required": true,
+    "ekyc_mandatory": [
+      "SCH001",
+      "SCH002",
+      "SCH006"
+    ],
+    "assisted_enrollment_recommended": [
+      "low_literacy",
+      "rural_area",
+      "elderly"
+    ]
+  }
+}

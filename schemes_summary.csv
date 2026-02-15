@@ -1,0 +1,7 @@
+﻿Scheme ID,Scheme Name,Category,Ministry,Benefit,Target Audience,Portal
+SCH001,PM-KISAN (Pradhan Mantri Kisan Samman Nidhi),Agriculture,Ministry of Agriculture & Farmers Welfare,"₹6,000 per year (in 3 installments)","small and marginal farmers, landholding families...",https://pmkisan.gov.in
+SCH002,PMFBY (Pradhan Mantri Fasal Bima Yojana),Agriculture,Ministry of Agriculture & Farmers Welfare,Crop insurance coverage up to sum insured,"farmers growing notified crops, both loanee and no...",https://pmfby.gov.in
+SCH003,PMAY-G (Pradhan Mantri Awas Yojana - Gramin),Housing,Ministry of Rural Development,"₹1.2 lakh (plains), ₹1.3 lakh (hilly areas)","rural poor, houseless families, BPL families...",https://pmayg.nic.in
+SCH004,PM-SYM (Pradhan Mantri Shram Yogi Maandhan),Social Security,Ministry of Labour and Employment,"₹3,000 per month pension (after 60 years)",young unorganised workers aged 18-40 with low inco...,https://maandhan.in
+SCH005,PM SVANidhi (Street Vendor's AtmaNirbhar Nidhi),Financial Inclusion,Ministry of Housing and Urban Affairs,"Working capital loan up to ₹10,000 (extendable to ₹50,000)",urban street vendors affected by COVID-19...,https://pmsvanidhi.mohua.gov.in
+SCH006,PMJJBY (Pradhan Mantri Jeevan Jyoti Bima Yojana),Insurance,Ministry of Finance,₹2 lakh life cover,bank account holders aged 18-50 seeking affordable...,Bank-specific

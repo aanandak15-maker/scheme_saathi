@@ -1,0 +1,331 @@
+{
+  "schema_version": "1.0",
+  "description": "Citizen profile structure for Scheme Saathi eligibility engine",
+  "profile_fields": {
+    "personal_info": {
+      "citizen_id": {
+        "type": "string",
+        "required": true,
+        "description": "Unique identifier"
+      },
+      "full_name": {
+        "type": "string",
+        "required": true
+      },
+      "name_hindi": {
+        "type": "string",
+        "required": false
+      },
+      "age": {
+        "type": "integer",
+        "required": true
+      },
+      "gender": {
+        "type": "string",
+        "required": true,
+        "values": [
+          "Male",
+          "Female",
+          "Other"
+        ]
+      },
+      "aadhaar_number": {
+        "type": "string",
+        "required": true,
+        "masked": true
+      },
+      "mobile_number": {
+        "type": "string",
+        "required": true
+      },
+      "language_preference": {
+        "type": "array",
+        "values": [
+          "Hindi",
+          "English",
+          "Bhojpuri",
+          "Tamil",
+          "Telugu",
+          "Bengali",
+          "etc."
+        ]
+      }
+    },
+    "location_info": {
+      "state": {
+        "type": "string",
+        "required": true
+      },
+      "district": {
+        "type": "string",
+        "required": true
+      },
+      "block": {
+        "type": "string",
+        "required": true
+      },
+      "village_city": {
+        "type": "string",
+        "required": true
+      },
+      "area_type": {
+        "type": "string",
+        "required": true,
+        "values": [
+          "Rural",
+          "Urban",
+          "Semi-Urban"
+        ]
+      },
+      "pincode": {
+        "type": "string",
+        "required": true
+      }
+    },
+    "occupation_info": {
+      "primary_occupation": {
+        "type": "string",
+        "required": true
+      },
+      "occupation_category": {
+        "type": "string",
+        "values": [
+          "Farmer",
+          "Agricultural Labor",
+          "Street Vendor",
+          "Construction Worker",
+          "Unorganised Worker",
+          "Salaried",
+          "Business",
+          "Student",
+          "Unemployed",
+          "Other"
+        ]
+      },
+      "monthly_income": {
+        "type": "integer",
+        "required": true,
+        "unit": "INR"
+      },
+      "income_source": {
+        "type": "string"
+      },
+      "employment_type": {
+        "type": "string",
+        "values": [
+          "Self-employed",
+          "Daily Wage",
+          "Salaried",
+          "Unemployed"
+        ]
+      },
+      "is_bpl": {
+        "type": "boolean",
+        "description": "Below Poverty Line status"
+      }
+    },
+    "farmer_specific": {
+      "is_farmer": {
+        "type": "boolean",
+        "required": true
+      },
+      "land_ownership": {
+        "type": "boolean"
+      },
+      "land_area_acres": {
+        "type": "float"
+      },
+      "land_type": {
+        "type": "string",
+        "values": [
+          "Irrigated",
+          "Rain-fed",
+          "Mixed"
+        ]
+      },
+      "crops_grown": {
+        "type": "array"
+      },
+      "has_kisan_credit_card": {
+        "type": "boolean"
+      },
+      "farmer_category": {
+        "type": "string",
+        "values": [
+          "Small (<2 acres)",
+          "Marginal (<1 acre)",
+          "Medium (2-10 acres)",
+          "Large (>10 acres)"
+        ]
+      }
+    },
+    "financial_info": {
+      "has_bank_account": {
+        "type": "boolean",
+        "required": true
+      },
+      "bank_name": {
+        "type": "string"
+      },
+      "account_number": {
+        "type": "string",
+        "masked": true
+      },
+      "ifsc_code": {
+        "type": "string"
+      },
+      "is_income_tax_payer": {
+        "type": "boolean"
+      },
+      "annual_income": {
+        "type": "integer",
+        "unit": "INR"
+      }
+    },
+    "social_category": {
+      "caste_category": {
+        "type": "string",
+        "values": [
+          "General",
+          "OBC",
+          "SC",
+          "ST",
+          "Other"
+        ]
+      },
+      "religion": {
+        "type": "string"
+      },
+      "minority_status": {
+        "type": "boolean"
+      }
+    },
+    "family_info": {
+      "family_size": {
+        "type": "integer"
+      },
+      "dependents": {
+        "type": "integer"
+      },
+      "has_disabled_member": {
+        "type": "boolean"
+      },
+      "is_widow": {
+        "type": "boolean"
+      },
+      "has_adult_earning_member": {
+        "type": "boolean"
+      },
+      "female_head_of_family": {
+        "type": "boolean"
+      }
+    },
+    "housing_info": {
+      "house_type": {
+        "type": "string",
+        "values": [
+          "Pucca",
+          "Semi-pucca",
+          "Kutcha",
+          "No House"
+        ]
+      },
+      "owns_house": {
+        "type": "boolean"
+      },
+      "has_electricity": {
+        "type": "boolean"
+      },
+      "has_toilet": {
+        "type": "boolean"
+      }
+    },
+    "documents_available": {
+      "aadhaar_card": {
+        "type": "boolean",
+        "required": true
+      },
+      "pan_card": {
+        "type": "boolean"
+      },
+      "bank_passbook": {
+        "type": "boolean"
+      },
+      "land_records": {
+        "type": "boolean"
+      },
+      "bpl_card": {
+        "type": "boolean"
+      },
+      "ration_card": {
+        "type": "boolean"
+      },
+      "voter_id": {
+        "type": "boolean"
+      },
+      "driving_license": {
+        "type": "boolean"
+      }
+    },
+    "government_schemes_enrolled": {
+      "current_schemes": {
+        "type": "array",
+        "description": "List of scheme IDs currently enrolled"
+      },
+      "past_schemes": {
+        "type": "array"
+      }
+    },
+    "exclusion_checks": {
+      "is_government_employee": {
+        "type": "boolean"
+      },
+      "is_pensioner": {
+        "type": "boolean"
+      },
+      "pension_amount": {
+        "type": "integer"
+      },
+      "owns_motorized_vehicle": {
+        "type": "boolean"
+      },
+      "is_professional": {
+        "type": "boolean"
+      },
+      "professional_type": {
+        "type": "string",
+        "values": [
+          "Doctor",
+          "Engineer",
+          "Lawyer",
+          "CA",
+          "Architect",
+          "None"
+        ]
+      },
+      "constitutional_post": {
+        "type": "boolean"
+      },
+      "is_mp_mla": {
+        "type": "boolean"
+      }
+    },
+    "digital_literacy": {
+      "can_use_smartphone": {
+        "type": "boolean"
+      },
+      "internet_access": {
+        "type": "boolean"
+      },
+      "literacy_level": {
+        "type": "string",
+        "values": [
+          "Illiterate",
+          "Basic",
+          "Moderate",
+          "High"
+        ]
+      }
+    }
+  }
+}

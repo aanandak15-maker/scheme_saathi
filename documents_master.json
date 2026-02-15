@@ -1,0 +1,154 @@
+[
+  {
+    "doc_id": "DOC001",
+    "doc_name": "Aadhaar Card",
+    "doc_type": "Identity",
+    "issuing_authority": "UIDAI",
+    "validity": "Lifetime",
+    "digital_available": true
+  },
+  {
+    "doc_id": "DOC002",
+    "doc_name": "Land Records/Ownership Proof",
+    "doc_type": "Property",
+    "issuing_authority": "Revenue Department",
+    "validity": "NA",
+    "digital_available": true
+  },
+  {
+    "doc_id": "DOC003",
+    "doc_name": "Bank Account Passbook",
+    "doc_type": "Financial",
+    "issuing_authority": "Bank",
+    "validity": "Active",
+    "digital_available": true
+  },
+  {
+    "doc_id": "DOC004",
+    "doc_name": "Mobile Number (Aadhaar linked)",
+    "doc_type": "Communication",
+    "issuing_authority": "Telecom Provider",
+    "validity": "Active",
+    "digital_available": true
+  },
+  {
+    "doc_id": "DOC005",
+    "doc_name": "Land Records/Lease Agreement",
+    "doc_type": "Property",
+    "issuing_authority": "Revenue Dept/Lessor",
+    "validity": "Varies",
+    "digital_available": false
+  },
+  {
+    "doc_id": "DOC006",
+    "doc_name": "Sowing Certificate",
+    "doc_type": "Agriculture",
+    "issuing_authority": "Village Patwari/Agriculture Dept",
+    "validity": "Season-specific",
+    "digital_available": false
+  },
+  {
+    "doc_id": "DOC007",
+    "doc_name": "Crop Details",
+    "doc_type": "Agriculture",
+    "issuing_authority": "Self-declaration",
+    "validity": "Season-specific",
+    "digital_available": false
+  },
+  {
+    "doc_id": "DOC008",
+    "doc_name": "BPL Card",
+    "doc_type": "Economic Status",
+    "issuing_authority": "State Government",
+    "validity": "Varies",
+    "digital_available": false
+  },
+  {
+    "doc_id": "DOC009",
+    "doc_name": "SECC Data",
+    "doc_type": "Economic Status",
+    "issuing_authority": "MoRD",
+    "validity": "2011 Census",
+    "digital_available": true
+  },
+  {
+    "doc_id": "DOC010",
+    "doc_name": "Job Card (MGNREGA)",
+    "doc_type": "Employment",
+    "issuing_authority": "Gram Panchayat",
+    "validity": "Active",
+    "digital_available": true
+  },
+  {
+    "doc_id": "DOC011",
+    "doc_name": "Mobile Number",
+    "doc_type": "Communication",
+    "issuing_authority": "Telecom Provider",
+    "validity": "Active",
+    "digital_available": true
+  },
+  {
+    "doc_id": "DOC012",
+    "doc_name": "Self-declaration of Income",
+    "doc_type": "Financial",
+    "issuing_authority": "Self",
+    "validity": "Annual",
+    "digital_available": false
+  },
+  {
+    "doc_id": "DOC013",
+    "doc_name": "Vending Certificate/LoR",
+    "doc_type": "Occupation",
+    "issuing_authority": "ULB/Municipal Corporation",
+    "validity": "Varies",
+    "digital_available": false
+  },
+  {
+    "doc_id": "DOC014",
+    "doc_name": "Photograph",
+    "doc_type": "Identity",
+    "issuing_authority": "Self",
+    "validity": "NA",
+    "digital_available": false
+  },
+  {
+    "doc_id": "DOC015",
+    "doc_name": "Nominee Details",
+    "doc_type": "Legal",
+    "issuing_authority": "Self",
+    "validity": "NA",
+    "digital_available": false
+  },
+  {
+    "doc_id": "DOC016",
+    "doc_name": "MCP Card",
+    "doc_type": "Health",
+    "issuing_authority": "Ministry of Health/Anganwadi",
+    "validity": "Maternity period",
+    "digital_available": true
+  },
+  {
+    "doc_id": "DOC017",
+    "doc_name": "Business Plan",
+    "doc_type": "Business",
+    "issuing_authority": "Self/Consultant",
+    "validity": "NA",
+    "digital_available": false
+  },
+  {
+    "doc_id": "DOC018",
+    "doc_name": "Age Proof",
+    "doc_type": "Identity",
+    "issuing_authority": "UIDAI/Municipality",
+    "validity": "Lifetime",
+    "digital_available": true
+  },
+  {
+    "doc_id": "DOC019",
+    "doc_name": "Samagra ID",
+    "doc_type": "Identity",
+    "issuing_authority": "Madhya Pradesh Govt",
+    "validity": "Lifetime",
+    "digital_available": true
+  }
+]
