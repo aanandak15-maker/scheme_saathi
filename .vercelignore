@@ -1,0 +1,17 @@
+# Dependencies
+node_modules
+*/node_modules
+**/node_modules
+
+# Next.js
+.next
+*/.next
+**/.next
+
+# Git
+.git
+*/.git
+
+# Misc
+.DS_Store
+*.log
