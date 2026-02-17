@@ -59,8 +59,8 @@ export const EligibleSchemesList: React.FC<EligibleSchemesListProps> = ({ scheme
                                         <span className="text-xs font-bold text-green-700">{scheme.score}%</span>
                                     </div>
                                 </TableCell>
-                                <TableCell className="max-w-xs truncate text-xs text-muted-foreground" title={scheme.reasoning}>
-                                    {scheme.reasoning}
+                                <TableCell className="max-w-xs truncate text-xs text-muted-foreground" title={Array.isArray(scheme.reasoning) ? scheme.reasoning.join('; ') : scheme.reasoning}>
+                                    {Array.isArray(scheme.reasoning) ? scheme.reasoning[0] : scheme.reasoning}
                                 </TableCell>
                                 <TableCell>
                                     {scheme.missing_documents.length === 0 ? (

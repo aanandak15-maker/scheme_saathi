@@ -105,9 +105,9 @@ export const EligibilityResultView: React.FC<EligibilityResultProps> = ({ result
                                     <MessageCircle className="h-4 w-4" />
                                     {isHindi ? 'विश्लेषण (Analysis)' : 'Analysis'}
                                 </h4>
-                                <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+                                <div className="text-gray-700 leading-relaxed text-sm md:text-base whitespace-pre-line">
                                     {isHindi ? ai_insight.explanation_hindi : ai_insight.explanation_english}
-                                </p>
+                                </div>
                             </div>
 
                             {/* Action Steps */}
@@ -132,9 +132,17 @@ export const EligibilityResultView: React.FC<EligibilityResultProps> = ({ result
                                 <h4 className="font-semibold text-orange-900 mb-2 flex items-center gap-2">
                                     <FileWarning className="h-4 w-4" /> Document Guidance
                                 </h4>
-                                <p className="text-sm text-gray-700 mb-3">
-                                    {ai_insight.document_guidance}
-                                </p>
+                                <ul className="text-sm text-gray-700 mb-3 space-y-1">
+                                    {Array.isArray(ai_insight.document_guidance)
+                                        ? ai_insight.document_guidance.map((item, i) => (
+                                            <li key={i} className="flex gap-2 items-start">
+                                                <span className="text-orange-500 mt-0.5">•</span>
+                                                <span>{item}</span>
+                                            </li>
+                                        ))
+                                        : <li>{ai_insight.document_guidance}</li>
+                                    }
+                                </ul>
                                 <Button variant="outline" size="sm" className="w-full border-orange-200 text-orange-700 hover:bg-orange-100">
                                     View Checklist
                                 </Button>
@@ -228,9 +236,12 @@ export const EligibilityResultView: React.FC<EligibilityResultProps> = ({ result
                                         <div className="space-y-4">
                                             <div>
                                                 <h5 className="font-semibold text-sm mb-2 text-gray-700">Why are you eligible?</h5>
-                                                <p className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg border">
-                                                    {scheme.reasoning}
-                                                </p>
+                                                <div className="text-sm text-gray-600 bg-gray-50 p-3 rounded-lg border space-y-1">
+                                                    {Array.isArray(scheme.reasoning)
+                                                        ? scheme.reasoning.map((r, i) => <p key={i}>{r}</p>)
+                                                        : <p>{scheme.reasoning}</p>
+                                                    }
+                                                </div>
                                             </div>
 
                                             {/* Benefits Mockup - Should come from scheme data ideally */}

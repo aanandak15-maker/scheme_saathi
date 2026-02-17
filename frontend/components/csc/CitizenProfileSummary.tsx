@@ -65,7 +65,7 @@ export const CitizenProfileSummary: React.FC<CitizenProfileSummaryProps> = ({ pr
                     <DollarSign className="h-4 w-4 text-muted-foreground mt-0.5" />
                     <div>
                         <p className="text-xs text-muted-foreground uppercase tracking-wider">Income Status</p>
-                        <p className="font-medium">{profile.occupation.income_level || 'Not Specified'}</p>
+                        <p className="font-medium">{(profile.occupation as any).income_level || (profile.occupation as any).monthly_income || 'Not Specified'}</p>
                     </div>
                 </div>
             </CardContent>

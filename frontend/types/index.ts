@@ -120,16 +120,18 @@ export interface EligibilityResult {
     eligible_schemes: {
         scheme_id: string;
         scheme_name: string;
+        is_eligible?: boolean;
         score: number;
-        reasoning: string;
+        reasoning: string[];
         missing_documents: string[];
+        priority_boost?: number;
     }[];
     ineligible_schemes_count: number;
     ai_insight?: {
         explanation_english: string;
         explanation_hindi: string;
         action_steps: string[];
-        document_guidance: string;
+        document_guidance: string[];
         alternative_schemes?: string[];
     };
 }
